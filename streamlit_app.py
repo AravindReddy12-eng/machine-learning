@@ -3,7 +3,20 @@ from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 import pandas as pd
 
 # Title of the web app
-st.title("Text Vectorization App")
+#st.title("Text Vectorization App")
+st.markdown(
+    """
+    <style>
+    .title {
+        text-align: center;
+        color: #4CAF50;
+        font-size: 48px;
+    }
+    </style>
+    <h1 class="title">Text Vectorization App</h1>
+    """, 
+    unsafe_allow_html=True
+)
 
 # Instructions for the user
 st.write("Enter text below and choose vectorization method (Bag of Words, TF-IDF, or N-grams).")
