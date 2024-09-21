@@ -25,10 +25,47 @@ st.write("Enter text below and choose vectorization method (Bag of Words, TF-IDF
 text_input = st.text_area("Enter your text (each sentence on a new line):")
 
 # Vectorization method choice
-vectorization_method = st.selectbox(
+"""vectorization_method = st.selectbox(
     "Select a vectorization method",
     ("Bag of Words", "TF-IDF", "N-grams")
+)"""
+st.markdown(
+    """
+    <style>
+    .radio-label {
+        font-size: 16px;
+        margin-right: 15px;
+    }
+    .bag-of-words {
+        color: #ff6347; /* Tomato Red */
+    }
+    .tf-idf {
+        color: #4CAF50; /* Green */
+    }
+    .ngrams {
+        color: #1E90FF; /* Dodger Blue */
+    }
+    </style>
+    """, 
+    unsafe_allow_html=True
 )
+
+# Custom radio buttons using st.radio for selecting vectorization method
+vectorization_method = st.radio(
+    "Select a vectorization method",
+    ("Bag of Words", "TF-IDF", "N-grams"),
+    format_func=lambda x: f"<span class='{x.lower().replace(' ', '-')}'>{x}</span>",
+    key="vectorization_method"
+)
+
+# Map the selected option to a CSS class and render with colors
+if vectorization_method == "Bag of Words":
+    st.markdown("<p class='radio-label bag-of-words'>Bag of Words selected</p>", unsafe_allow_html=True)
+elif vectorization_method == "TF-IDF":
+    st.markdown("<p class='radio-label tf-idf'>TF-IDF selected</p>", unsafe_allow_html=True)
+elif vectorization_method == "N-grams":
+    st.markdown("<p class='radio-label ngrams'>N-grams selected</p>", unsafe_allow_html=True)
+
 
 # N-gram range selection (if N-grams is chosen)
 ngram_range = (1, 1)  # default to unigrams
