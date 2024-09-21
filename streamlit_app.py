@@ -25,10 +25,10 @@ st.write("Enter text below and choose vectorization method (Bag of Words, TF-IDF
 text_input = st.text_area("Enter your text (each sentence on a new line):")
 
 # Vectorization method choice
-"""vectorization_method = st.selectbox(
+vectorization_method = st.selectbox(
     "Select a vectorization method",
     ("Bag of Words", "TF-IDF", "N-grams")
-)"""
+)
 st.markdown(
     """
     <style>
