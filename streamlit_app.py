@@ -10,7 +10,7 @@ st.markdown(
     .title {
         text-align: center;
         color: #4CAF50;
-        font-size: 24px;
+        font-size: 30px;
     }
     </style>
     <h1 class="title">Text Vectorization App</h1>
