@@ -11,7 +11,15 @@ import nltk
 nltk.download('stopwords')
 
 # Load Dataset
-df = pd.read_csv('IMDB Dataset.csv')
+
+# URL of the raw CSV file from GitHub
+url = 'https://raw.githubusercontent.com/AravindReddy12-eng/machine-learning/main/IMDB%20Dataset.csv'
+
+# Load the dataset
+df = pd.read_csv(url)
+
+# Continue with preprocessing and model setup...
+
 
 # Preprocess Data
 stop_words = set(stopwords.words('english'))
